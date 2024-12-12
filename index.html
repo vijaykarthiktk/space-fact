@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Space Facts Collection</title>
+    <script>
+      const spaceData = {
+        // Main container for all space-related facts
+        spaceFacts: [
+          {
+            // Facts about our solar system's characteristics
+            id: 1,
+            fact: "Light from the Sun takes approximately 8 minutes and 20 seconds to reach Earth",
+            category: "solar system",
+          },
+          {
+            // Venus rotation facts - unique planetary behavior
+            id: 2,
+            fact: "One day on Venus is longer than its year. It takes Venus 243 Earth days to rotate on its axis",
+            category: "planets",
+          },
+          {
+            // Star size comparison fact
+            id: 3,
+            fact: "The biggest known star, UY Scuti, is more than 1,700 times larger than our Sun",
+            category: "stars",
+          },
+          {
+            // Universe scale visualization fact
+            id: 4,
+            fact: "There are more stars in the universe than grains of sand on all of Earth's beaches",
+            category: "universe",
+          },
+          {
+            // Moon exploration legacy fact
+            id: 5,
+            fact: "The footprints left by Apollo astronauts on the Moon will last for at least 100 million years",
+            category: "space exploration",
+          },
+          {
+            // Galaxy size comparison fact
+            id: 6,
+            fact: "The largest known galaxy, IC 1101, is over 50 times larger than our Milky Way",
+            category: "galaxies",
+          },
+          {
+            // Jupiter day length fact
+            id: 7,
+            fact: "A day on Jupiter is only 10 hours long",
+            category: "planets",
+          },
+          {
+            // ISS velocity fact
+            id: 8,
+            fact: "The International Space Station travels at a speed of about 17,500 mph",
+            category: "space exploration",
+          },
+          {
+            // Exotic exoplanet fact
+            id: 9,
+            fact: "There is a planet made of diamonds, called 55 Cancri e",
+            category: "exoplanets",
+          },
+          {
+            // Black hole sound emission fact
+            id: 10,
+            fact: "Black holes can emit sound - it's a B-flat note 57 octaves below middle C",
+            category: "black holes",
+          },
+          {
+            // Future galaxy collision fact
+            id: 11,
+            fact: "The Milky Way galaxy is on a collision course with the Andromeda galaxy",
+            category: "galaxies",
+          },
+          {
+            // Saturn's rings composition fact
+            id: 12,
+            fact: "Saturn's rings are mostly made up of water ice and rock",
+            category: "planets",
+          },
+          {
+            // Earth-space comparison fact
+            id: 13,
+            fact: "There are more trees on Earth than stars in the Milky Way",
+            category: "universe",
+          },
+          {
+            // Neutron star rotation fact
+            id: 14,
+            fact: "Neutron stars can spin up to 600 times per second",
+            category: "stars",
+          },
+          {
+            // Space temperature fact
+            id: 15,
+            fact: "The temperature in the void of space is -270.45 degrees Celsius",
+            category: "universe",
+          },
+          {
+            // Space exploration history fact
+            id: 16,
+            fact: "The first animal in space was a dog named Laika, launched by the Soviet Union",
+            category: "space exploration",
+          },
+          {
+            // Mars geological fact
+            id: 17,
+            fact: "Mars has the largest volcano in the solar system, Olympus Mons",
+            category: "planets",
+          },
+          {
+            // Interesting space chemistry fact
+            id: 18,
+            fact: "There's a cloud of alcohol in Sagittarius B2, a vast cloud of gas and dust",
+            category: "space phenomena",
+          },
+          {
+            // Solar mass loss fact
+            id: 19,
+            fact: "The Sun loses about 4 million tons of mass every second due to fusion",
+            category: "stars",
+          },
+          {
+            // Solar system size fact
+            id: 20,
+            fact: "The edge of our solar system is about 100,000 astronomical units from the Sun",
+            category: "solar system",
+          },
+        ],
+      };
+      window.onload = function () {
+        const factsContainer = document.querySelector(".facts-container");
+
+        spaceData.spaceFacts.forEach((factData) => {
+          const factCard = document.createElement("div");
+          factCard.className = "fact-card";
+
+          factCard.innerHTML = `
+                    <div class="category">${factData.id} - ${factData.category}</div>
+                    <p class="fact-text">${factData.fact}</p>
+                `;
+
+          factsContainer.appendChild(factCard);
+        });
+      };
+    </script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #0a192f;
+        color: #ffffff;
+        padding: 20px;
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 40px;
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: #64ffda;
+      }
+
+      .facts-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .fact-card {
+        background-color: #112240;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+      }
+
+      .fact-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .category {
+        color: #64ffda;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+        letter-spacing: 1px;
+      }
+
+      .fact-text {
+        font-size: 1.1rem;
+        line-height: 1.5;
+      }
+
+      @media (max-width: 768px) {
+        .facts-container {
+          grid-template-columns: 1fr;
+        }
+
+        h1 {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Fascinating Space Facts</h1>
+      </header>
+      <div class="facts-container"></div>
+    </div>
+  </body>
+</html>
